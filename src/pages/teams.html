@@ -1,0 +1,26 @@
+<template>
+
+    <require from="../components/teams/teams-list"></require>
+    <require from="../components/teams/teams-create"></require>
+
+    <h1>${heading}</h1>
+
+    <br/>
+
+    <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a role="tab" href="#list" aria-controls="list" data-toggle="tab">Lag</a></li>
+        <li role="presentation"><a role="tab" href="#create" aria-controls="create" data-toggle="tab">Nytt lag</a></li>
+    </ul>
+
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane fade active in" id="list">
+            <br/>
+            <teams-list></teams-list>
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="create">
+            <br/>
+            <teams-create></teams-create>
+        </div>
+    </div>
+
+</template>

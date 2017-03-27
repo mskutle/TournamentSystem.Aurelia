@@ -1,0 +1,21 @@
+<template>
+    <div if.bind="teams.length > 0">
+        <table class="table table-striped">
+            <thead>
+                <th>Navn</th>
+                <th>Lagansvarlig</th>
+                <th>Handling</th>
+            </thead>
+            
+                <tr repeat.for="team of teams">
+                    <td><a route-href="route: team-details; params.bind: {id: team._id}">${team.name}</a></td>
+                    <td>${team.owner.firstname} ${team.owner.lastname}</td>
+                    <td><a click.trigger="deleteTeam(team)" style="cursor: pointer;">Slett</a></td>
+                </tr>
+        </table>
+     </div>
+     <div if.bind="teams.length === 0">
+         Ingen registrerte lag.
+     </div>
+
+</template>

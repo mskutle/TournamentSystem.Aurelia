@@ -1,0 +1,29 @@
+<template>
+    <h1>${tournament.name}</h1>
+    <hr/>
+
+    <form class="form-inline" submit.delegate="addTeamToTournament()">
+        <div class="form-group">
+            Meld på lag 
+            <select value.bind="selectedTeam" class="form-control">
+                <option repeat.for="team of selectableTeams" model.bind="team">
+                    ${team.name}
+                </option>
+            </select>
+            <button type="submit" class="btn btn-sm btn-primary">Meld på!</button>
+        </div>
+    </form>
+
+    <h3>Påmeldte lag</h3>
+    <table class="table table-striped">
+        <thead>
+            <th>Navn</th>
+            <th>Lagansvarlig</th>
+        </thead>
+        <tr repeat.for="team of tournament.teams">
+            <td>${team.name}</td>
+            <td>${team.owner.firstname} ${team.owner.lastname}</td>
+        </tr>
+    </table>
+
+</template>

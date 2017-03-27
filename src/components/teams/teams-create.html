@@ -1,0 +1,14 @@
+<template>
+  
+    <form class="form-inline" submit.delegate="create()">
+
+        <div class="form-group" validation-errors.bind="nameErrors" class.bind="nameErrors.length ? 'has-error' : ''">
+            <label for="name">Navn: </label>
+            <input type="text" value.bind="name & validate" class="form-control"/>
+        </div>
+
+        <button type="submit" class="btn btn-primary" disabled.bind="controller.errors.length">Lagre</button>
+
+    </form>
+
+</template>

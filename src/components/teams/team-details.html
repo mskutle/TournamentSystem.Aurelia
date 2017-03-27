@@ -1,0 +1,25 @@
+<template>
+    <h1>${team.name}</h1>
+
+    <form class="form-inline" submit.delegate="addPlayerToTeam()">
+        <label>Legg til spiller: </label>
+        <select value.bind="selectedPlayer" class="form-control">
+            <option repeat.for="player of selectablePlayers" model.bind="player">${player.firstname} ${player.lastname}</option>
+        </select>
+        <button type="submit" class="btn btn-primary">Legg til</button>
+    </form>
+
+    <h3>Spillere</h3>
+
+    <table class="table table-striped">
+        <thead>
+            <th>Etternavn</th>
+            <th>Fornavn</th>
+        </thead>
+        <tr repeat.for="player of team.players">
+            <td>${player.lastname}</td>
+            <td>${player.firstname}</td>
+        </tr>
+    </table>
+    
+</template>

@@ -1,0 +1,34 @@
+<template>
+    <form class="form-inline" submit.delegate="create()">
+
+        <div class="form-group" validation-errors.bind="nameErrors" class.bind="nameErrors.length ? 'has-error' : ''">
+            <label for="name">Navn: </label>
+            <input type="text" value.bind="name & validate" class="form-control"/>
+        </div>
+        <br/> <br/>
+        <div class="form-group" validation-errors.bind="tournamentTypeErrors" class.bind="tournamentTypeErrors.length ? 'has-error' : ''">
+            <label for="tournamentType">Type: </label>
+            <select value.bind="tournamentType" class="form-control">
+                <option model.bind="null">Velg...</option>
+                <option>Cup</option>
+                <option>Liga</option>
+            </select>
+        </div>
+        <br/> <br/>
+        <div class="form-group" validation-errors.bind="startDateErrors" class.bind="startDateErrors.length ? 'has-error': ''">
+            <label for="startDate">Startdato: </label>
+            <input type="date" value.bind="startDate" class="form-control"/>
+        </div>
+        <br/><br/>
+
+        <div class="form-group" validation-errors.bind="endDateErrors" class.bind="endDateErrors.length ? 'has-error': ''">
+            <label for="endDate">Sluttdato: </label>
+            <input type="date" value.bind="endDate" class="form-control"/>
+        </div>
+
+        <br/><br/>
+        <button type="submit" class="btn btn-primary" disabled.bind="controller.errors.length">Lagre</button>
+
+    </form>
+
+</template>

@@ -1,0 +1,26 @@
+<template>
+    
+    <require from="../components/tournaments/tournaments-list"></require>
+    <require from="../components/tournaments/tournaments-create"></require>
+
+    <h1>${heading}</h1>
+
+    <br/>
+
+    <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a role="tab" href="#list" aria-controls="list" data-toggle="tab">Turneringer</a></li>
+        <li role="presentation"><a role="tab" href="#create" aria-controls="create" data-toggle="tab">Ny turnering</a></li>
+    </ul>
+
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active fade in" id="list">
+            <br/>
+            <tournaments-list></tournaments-list>
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="create">
+            <br/>
+            <tournaments-create></tournaments-create>
+        </div>
+    </div>
+
+</template>
